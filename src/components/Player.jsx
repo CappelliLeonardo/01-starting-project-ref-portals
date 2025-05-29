@@ -3,13 +3,14 @@ import { useState, useRef } from "react";
 export default function Player() {
   const playerName = useRef();
   const [enteredPlayerName, setEnteredPlayerName] = useState("");
-  //const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   // function handleChange(e) {
   //   setSubmitted(false);
   //   setEnteredPlayerName(e.target.value);
   // }
   function handleClick() {
     setEnteredPlayerName(playerName.current.value);
+    playerName.current.value = "";
   }
   return (
     <section id="player">
